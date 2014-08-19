@@ -26,6 +26,12 @@
 # this CMakeLists is to generate libChipmunk.a
 cmake_minimum_required(VERSION 2.8)
 
+if(LINUX32)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m32")
+else()
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m64")
+endif(LINUX32)
+
 include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/chipmunk/include/chipmunk
 )
