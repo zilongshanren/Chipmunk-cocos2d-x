@@ -24,6 +24,7 @@
 # ****************************************************************************/
 
 # this CMakeLists is to generate libChipmunk.a
+cmake_minimum_required(VERSION 2.8)
 
 include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/chipmunk/include/chipmunk
@@ -42,6 +43,9 @@ if ( CMAKE_SIZEOF_VOID_P EQUAL 8 )
 else()
     set(FMOD_LIB "fmodex")
 endif()
+
+# we must add this options to compile this library
+SET_SOURCE_FILES_PROPERTIES( ${chipmunk_source_files} PROPERTIES LANGUAGE CXX )
 
 # target_link_libraries(cocos2d jpeg webp tiff freetype fontconfig png pthread glfw GLEW GL X11 rt z ${FMOD_LIB} curl)
 
