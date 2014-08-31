@@ -44,19 +44,18 @@ file(GLOB_RECURSE chipmunk_source_files
 
 add_library(Chipmunk STATIC ${chipmunk_source_files})
 
-if ( CMAKE_SIZEOF_VOID_P EQUAL 8 )
-    set(FMOD_LIB "fmodex64")
-else()
-    set(FMOD_LIB "fmodex")
-endif()
-
 # we must add this options to compile this library
 SET_SOURCE_FILES_PROPERTIES( ${chipmunk_source_files} PROPERTIES LANGUAGE CXX )
 
-# target_link_libraries(cocos2d jpeg webp tiff freetype fontconfig png pthread glfw GLEW GL X11 rt z ${FMOD_LIB} curl)
 
+if(ANDROID)
+message(STATUS "android doesn't need arCHIVE_OUTPUT_DIRECTORY")
+else()
 set_target_properties(Chipmunk
     PROPERTIES
     ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
     LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
 )
+
+endif()
+
