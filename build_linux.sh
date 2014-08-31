@@ -20,7 +20,7 @@ mkdir -p prebuilt/32/
 cp lib/libChipmunk.a prebuilt/32/
 rm -rf lib
 
-cmake -DLINUX32=0 .
+cmake -DLINUX64=1 .
 
 make
 

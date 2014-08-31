@@ -28,7 +28,7 @@ cmake_minimum_required(VERSION 2.8)
 
 if(LINUX32)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m32")
-else()
+elseif(LINUX64)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -m64")
 endif(LINUX32)
 
@@ -49,7 +49,7 @@ SET_SOURCE_FILES_PROPERTIES( ${chipmunk_source_files} PROPERTIES LANGUAGE CXX )
 
 
 if(ANDROID)
-message(STATUS "android doesn't need arCHIVE_OUTPUT_DIRECTORY")
+message(STATUS "android doesn't need ARCHIVE_OUTPUT_DIRECTORY")
 else()
 set_target_properties(Chipmunk
     PROPERTIES
