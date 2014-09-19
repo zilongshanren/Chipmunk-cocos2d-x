@@ -10,6 +10,8 @@ sudo apt-get install lib32stdc++6
 
 sudo apt-get install g++-multilib
 
+LIBNAME="chipmunk"
+
 rm -rf prebuilt/linux
 mkdir build.linux
 cd build.linux
@@ -20,7 +22,7 @@ make
 
 cd ..
 mkdir -p prebuilt/linux/32/
-cp build.linux/lib/libchipmunk.a prebuilt/linux/32/
+cp build.linux/lib/lib"${LIBNAME}".a prebuilt/linux/32/
 rm -rf build.linux
 
 mkdir build.linux
@@ -31,5 +33,5 @@ make
 
 cd ..
 mkdir -p prebuilt/linux/64/
-cp build.linux/lib/libchipmunk.a  prebuilt/linux/64/
+cp build.linux/lib/lib"${LIBNAME}".a  prebuilt/linux/64/
 rm -rf build.linux
