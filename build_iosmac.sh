@@ -1,6 +1,6 @@
 #!/bin/sh
 
-LIBNAME="Chipmunk"
+LIBNAME="chipmunk"
 IOS_SDK_VERSION="7.1"
 
 # use ios-cmake to generate ios project

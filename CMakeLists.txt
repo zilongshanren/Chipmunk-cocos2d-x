@@ -42,7 +42,7 @@ file(GLOB_RECURSE chipmunk_source_files
   )
 
 
-add_library(Chipmunk STATIC ${chipmunk_source_files})
+add_library(chipmunk STATIC ${chipmunk_source_files})
 
 # we must add this options to compile this library
 SET_SOURCE_FILES_PROPERTIES( ${chipmunk_source_files} PROPERTIES LANGUAGE CXX )
@@ -51,7 +51,7 @@ SET_SOURCE_FILES_PROPERTIES( ${chipmunk_source_files} PROPERTIES LANGUAGE CXX )
 if(ANDROID)
 message(STATUS "android doesn't need ARCHIVE_OUTPUT_DIRECTORY")
 else()
-set_target_properties(Chipmunk
+set_target_properties(chipmunk
     PROPERTIES
     ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
     LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
@@ -59,3 +59,6 @@ set_target_properties(Chipmunk
 
 endif()
 
+
+install(DIRECTORY chipmunk/include/ DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/prebuilt/include"
+          FILES_MATCHING PATTERN "*.h")
