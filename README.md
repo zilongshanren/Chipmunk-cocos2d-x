@@ -4,6 +4,9 @@ Chipmunk-cocos2d-x
   is [here](https://chipmunk-physics.net)
 - the version of Chipmunk is 6.2.1
 
+## Prerequisite
+
+You must setup ANDROID_NDK environment in your ~/.bashrc file to point to your NDK directory.
 
 ##Build
 
