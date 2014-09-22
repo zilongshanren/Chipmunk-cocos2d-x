@@ -4,7 +4,8 @@ LIBNAME="chipmunk"
 IOS_SDK_VERSION="7.1"
 
 # use ios-cmake to generate ios project
-rm -rf prebuilt
+rm -rf prebuilt/ios/
+rm -rf prebuilt/mac/
 rm -rf build.ios
 mkdir build.ios
 cd build.ios
